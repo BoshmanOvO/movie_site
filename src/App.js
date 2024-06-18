@@ -3,12 +3,11 @@ import React ,{ useState , useEffect } from "react";
 import "./App.css";
 import SearchIcon from './search.svg';
 import MovieCard from "./MovieCard";
+import {API_KEY} from "./config";
 
-
-const Url = "http://www.omdbapi.com?apikey=82ad317";
+const Url = `http://www.omdbapi.com?apikey=${API_KEY}`;
 
 const App = () => {
-
     const [movies , setMovies]=useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     useEffect ( () => {
