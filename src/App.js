@@ -4,7 +4,8 @@ import "./App.css";
 import SearchIcon from './search.svg';
 import MovieCard from "./MovieCard";
 
-const API_URL = `http://www.omdbapi.com?apikey=82ad317`;
+
+const Url = "http://www.omdbapi.com?apikey=82ad317";
 
 const movie1 ={
     Poster: "https://m.media-amazon.com/images/M/MV5BMDJhZjA5MWEtOTE5Yy00MWJiLTgwNjQtMDliOWI0NWJmZDZkXkEyXkFqcGdeQXVyMjY1ODY2Ng@@._V1_SX300.jpg",
@@ -21,7 +22,7 @@ const App = () => {
         searchMovies('Ironman').then(r => console.log(r));
     },[]);
         const searchMovies = async( title )=>{
-            const response = await fetch(`${API_URL}&s=${title}`);
+            const response = await fetch(`${Url}&s=${title}`);
             const data = await response.json();
             setMovies(data.Search);
         };
